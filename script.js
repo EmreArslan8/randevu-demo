@@ -1,3 +1,20 @@
+/* ---------- Tema (aydınlık / karanlık) ---------- */
+(function themeInit() {
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  let saved;
+  try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const start = saved || (prefersDark ? 'dark' : 'light');
+  root.setAttribute('data-theme', start);
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+
 /* ---------- Mobil menü ---------- */
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
