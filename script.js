@@ -165,6 +165,19 @@ chatSuggest.addEventListener('click', e => {
   sendUser(btn.textContent);
 });
 
+/* ---------- SSS akordeon ---------- */
+const faqList = document.getElementById('faqList');
+if (faqList) {
+  faqList.addEventListener('click', e => {
+    const q = e.target.closest('.faq-q');
+    if (!q) return;
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    faqList.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+}
+
 /* ---------- Header gölge (scroll) ---------- */
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {

@@ -377,3 +377,108 @@ body.admin { background: var(--bg-alt); }
 @media (max-width: 680px) {
   .steps { grid-template-columns: 1fr; }
 }
+
+/* ==================== ANA SAYFA ZENGİNLEŞTİRME ==================== */
+
+/* Hero — sosyal kanıt */
+.hero-proof { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
+.avatars { display: flex; }
+.avatars span { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--surface); margin-left: -10px; background: var(--brand-soft); }
+.avatars span:first-child { margin-left: 0; }
+.avatars span:nth-child(2){ background: #dfe7f1; } .avatars span:nth-child(3){ background: #cfdbe9; } .avatars span:nth-child(4){ background: #bccfe1; }
+.stars { color: var(--accent); letter-spacing: 2px; font-size: .95rem; }
+.hero-proof small { color: var(--muted); font-size: .88rem; }
+.hero-proof small b { color: var(--text); }
+
+/* Hero — görsel + yüzen kartlar */
+.hero-visual { position: relative; }
+.float-card {
+  position: absolute; display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 14px; box-shadow: var(--shadow); animation: floaty 4s ease-in-out infinite;
+}
+.float-card b { font-size: .88rem; display: block; }
+.float-card small { color: var(--muted); font-size: .78rem; }
+.fc-ico { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px; background: var(--brand-soft); font-size: 1.1rem; }
+.float-1 { top: 8%; left: -26px; }
+.float-2 { bottom: 10%; right: -22px; animation-delay: 1.5s; }
+@keyframes floaty { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+
+/* İstatistik bandı */
+.stats-band { background: var(--brand); }
+.stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 34px 20px; text-align: center; }
+.stats-inner b { display: block; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1.1; }
+.stats-inner span { color: rgba(255,255,255,.75); font-size: .9rem; }
+
+/* Popüler hizmetler */
+.services { grid-template-columns: repeat(4, 1fr); }
+.service { display: block; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.service:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--brand); }
+.service-ico { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-soft); font-size: 1.5rem; margin-bottom: 14px; }
+.service h3 { font-size: 1.08rem; margin-bottom: 6px; }
+.service p { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+.service-meta { font-size: .82rem; color: var(--brand); font-weight: 600; }
+
+/* Booking — bilgi kolonu */
+.booking-info { display: flex; flex-direction: column; gap: 22px; }
+.booking-perks { list-style: none; display: grid; gap: 12px; }
+.booking-perks li { color: var(--text); font-size: .96rem; }
+.booking-help { display: flex; align-items: center; gap: 14px; }
+.booking-help .avatar { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-soft); font-size: 1.4rem; flex: none; }
+.booking-help b { display: block; font-size: .95rem; }
+.booking-help small { color: var(--muted); font-size: .85rem; }
+.booking-help .btn { margin-left: auto; padding: 8px 18px; flex: none; }
+
+/* AI Asistan bölümü */
+.assistant-inner { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; }
+.assistant-inner .chat { margin: 0; }
+.assistant-points { list-style: none; display: grid; gap: 12px; margin-top: 22px; }
+.assistant-points li { color: var(--text); font-size: .98rem; }
+
+/* Yorumlar */
+.reviews { grid-template-columns: repeat(3, 1fr); }
+.review .stars { margin-bottom: 12px; }
+.review p { color: var(--text); font-size: .96rem; line-height: 1.6; margin-bottom: 18px; }
+.review-user { display: flex; align-items: center; gap: 12px; }
+.ru-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: .85rem; }
+.review-user b { display: block; font-size: .92rem; }
+.review-user small { color: var(--muted); font-size: .82rem; }
+
+/* SSS */
+.faq-inner { max-width: 780px; margin: 0 auto; }
+.faq-inner .section-head { text-align: center; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: none; border: 0; padding: 18px 20px; font: inherit; font-weight: 600; font-size: 1rem; color: var(--text); cursor: pointer; text-align: left; }
+.faq-q span { font-size: 1.4rem; color: var(--brand); transition: transform .25s; flex: none; }
+.faq-item.open .faq-q span { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.faq-item.open .faq-a { max-height: 220px; }
+.faq-a p { padding: 0 20px 18px; color: var(--muted); font-size: .95rem; }
+
+/* Footer zengin */
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 34px; padding: 20px 20px 34px; }
+.footer-brand .logo { margin-bottom: 14px; }
+.footer-brand p { color: var(--muted); font-size: .92rem; max-width: 300px; }
+.footer-col h4 { font-size: .95rem; margin-bottom: 14px; }
+.footer-col a { display: block; color: var(--muted); font-size: .92rem; padding: 5px 0; transition: color .2s; }
+.footer-col a:hover { color: var(--brand); }
+.footer-bottom { border-top: 1px solid var(--border); padding: 20px; }
+.footer-bottom p { color: var(--muted); font-size: .88rem; text-align: center; }
+
+/* Responsive — yeni bölümler */
+@media (max-width: 900px) {
+  .services { grid-template-columns: repeat(2, 1fr); }
+  .assistant-inner { grid-template-columns: 1fr; }
+  .reviews { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .float-1 { left: 0; } .float-2 { right: 0; }
+}
+@media (max-width: 680px) {
+  .services { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-visual { margin-top: 10px; }
+  .float-card { display: none; }
+  .reviews { grid-template-columns: 1fr; }
+}

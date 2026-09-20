@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RandevuAI — Randevu & Yapay Zekâ Destekli Cevap Sistemi</title>
-  <meta name="description" content="Randevu sistemli, yapay zekâ destekli cevap sistemine sahip modern web sitesi demosu." />
+  <meta name="description" content="Saniyeler içinde online randevu al, yapay zekâ asistanına sorularını sor. Hızlı, ücretsiz ve 7/24 açık." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -19,10 +19,10 @@
         <span>Randevu<b>AI</b></span>
       </a>
       <nav class="nav" id="nav">
-        <a href="#features">Özellikler</a>
-        <a href="#booking">Randevu Al</a>
-        <a href="#assistant">AI Asistan</a>
+        <a href="#services">Hizmetler</a>
         <a href="#how">Nasıl Çalışır</a>
+        <a href="#assistant">AI Asistan</a>
+        <a href="#faq">S.S.S.</a>
         <a href="#booking" class="nav-cta">Randevu Al</a>
       </nav>
       <button class="theme-toggle" id="themeToggle" aria-label="Temayı değiştir" title="Temayı değiştir">
@@ -44,31 +44,89 @@
            her şeyi yapay zekâ asistanına sor. Beklemek yok, telefon trafiği yok.</p>
         <div class="hero-actions">
           <a href="#booking" class="btn btn-primary">Randevumu Oluştur</a>
-          <a href="#assistant" class="btn btn-ghost">Asistana Soru Sor</a>
+          <a href="#assistant" class="btn btn-ghost">▶ Asistanı Dene</a>
         </div>
-        <div class="hero-stats">
-          <div><b>60 sn</b><span>Ortalama süre</span></div>
-          <div><b>7/24</b><span>Her an açık</span></div>
-          <div><b>%100</b><span>Ücretsiz</span></div>
+        <div class="hero-proof">
+          <div class="avatars"><span></span><span></span><span></span><span></span></div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <small><b>5.000+</b> kişi randevusunu RandevuAI ile aldı</small>
+          </div>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="mini-cal">
-          <div class="mini-cal-head">
-            <span>Eylül 2026</span>
-            <div class="dots"><i></i><i></i><i></i></div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="mini-cal">
+            <div class="mini-cal-head">
+              <span>Eylül 2026</span>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+            <div class="mini-cal-grid" id="miniCal"></div>
+            <div class="mini-slot">
+              <span class="pulse"></span> Bugün 3 uygun saat var
+            </div>
           </div>
-          <div class="mini-cal-grid" id="miniCal"></div>
-          <div class="mini-slot">
-            <span class="pulse"></span> Bugün 3 uygun saat var
-          </div>
+        </div>
+        <div class="float-card float-1">
+          <span class="fc-ico">✅</span>
+          <div><b>Randevu onaylandı</b><small>Yarın · 14:30</small></div>
+        </div>
+        <div class="float-card float-2">
+          <span class="fc-ico">🤖</span>
+          <div><b>Asistan yanıtladı</b><small>0,8 sn içinde</small></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Stats band -->
+  <section class="stats-band">
+    <div class="container stats-inner">
+      <div><b>5.000+</b><span>Alınan randevu</span></div>
+      <div><b>%98</b><span>Memnuniyet</span></div>
+      <div><b>&lt; 1 sn</b><span>Ortalama yanıt</span></div>
+      <div><b>7/24</b><span>Kesintisiz destek</span></div>
+    </div>
+  </section>
+
+  <!-- Popüler Hizmetler -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Popüler hizmetler</h2>
+        <p>En çok tercih edilen hizmetlerden birini seç, hemen randevunu oluştur.</p>
+      </div>
+      <div class="grid services">
+        <a href="#booking" class="card service">
+          <span class="service-ico">💼</span>
+          <h3>Danışmanlık Görüşmesi</h3>
+          <p>Birebir uzman görüşmesi ile ihtiyaçlarını netleştir.</p>
+          <span class="service-meta">⏱ 45 dk · Uygun saatler var</span>
+        </a>
+        <a href="#booking" class="card service">
+          <span class="service-ico">🖥️</span>
+          <h3>Web Sitesi Sunumu</h3>
+          <p>Projeni ekranda birlikte inceleyelim, sorularını yanıtlayalım.</p>
+          <span class="service-meta">⏱ 30 dk · Online</span>
+        </a>
+        <a href="#booking" class="card service">
+          <span class="service-ico">🛠️</span>
+          <h3>Teknik Destek</h3>
+          <p>Yaşadığın sorunu hızlıca çözelim, adım adım yardımcı olalım.</p>
+          <span class="service-meta">⏱ 20 dk · Aynı gün</span>
+        </a>
+        <a href="#booking" class="card service">
+          <span class="service-ico">🚀</span>
+          <h3>Ürün Demosu</h3>
+          <p>Ürünü canlı gör, tüm özellikleri deneyimle. Tamamen ücretsiz.</p>
+          <span class="service-meta">⏱ 25 dk · Ücretsiz</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Features -->
-  <section class="section" id="features">
+  <section class="section section-alt" id="features">
     <div class="container">
       <div class="section-head">
         <h2>Senin için tasarlandı</h2>
@@ -109,12 +167,55 @@
     </div>
   </section>
 
+  <!-- Nasıl Çalışır -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>Nasıl çalışır?</h2>
+        <p>Üç basit adımda randevunu oluştur.</p>
+      </div>
+      <div class="grid steps">
+        <article class="card step">
+          <span class="step-no">1</span>
+          <h3>Hizmeti seç</h3>
+          <p>İhtiyacın olan hizmeti listeden seç. İstersen önce asistana sorabilirsin.</p>
+        </article>
+        <article class="card step">
+          <span class="step-no">2</span>
+          <h3>Gün ve saati belirle</h3>
+          <p>Sana uygun boş günü ve saati takvimden kolayca işaretle.</p>
+        </article>
+        <article class="card step">
+          <span class="step-no">3</span>
+          <h3>Onayla, hazırsın</h3>
+          <p>Bilgilerini gir, onayla. Randevu bilgisi ve hatırlatma sana ulaşsın.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Booking -->
   <section class="section section-alt" id="booking">
     <div class="container booking-inner">
-      <div class="section-head left">
-        <h2>Randevu Al</h2>
-        <p>Uygun tarih ve saati seç, bilgilerini gir. Saniyeler sürer.</p>
+      <div class="booking-info">
+        <div class="section-head left">
+          <h2>Randevu Al</h2>
+          <p>Uygun tarih ve saati seç, bilgilerini gir. Saniyeler sürer.</p>
+        </div>
+        <ul class="booking-perks">
+          <li>✅ Anında onay, e-posta ile bilgilendirme</li>
+          <li>✅ Ücretsiz iptal ve erteleme</li>
+          <li>✅ Kredi kartı veya ön ödeme gerekmez</li>
+          <li>✅ Randevu öncesi otomatik hatırlatma</li>
+        </ul>
+        <div class="booking-help card">
+          <span class="avatar">🤖</span>
+          <div>
+            <b>Kararsız mısın?</b>
+            <small>Hangi hizmetin sana uygun olduğunu asistana sor.</small>
+          </div>
+          <a href="#assistant" class="btn btn-ghost">Sor</a>
+        </div>
       </div>
       <form class="card booking-form" id="bookingForm" novalidate>
         <div class="field">
@@ -155,10 +256,17 @@
 
   <!-- AI Assistant -->
   <section class="section" id="assistant">
-    <div class="container">
-      <div class="section-head">
+    <div class="container assistant-inner">
+      <div class="section-head left">
+        <span class="badge">🤖 7/24 çevrimiçi</span>
         <h2>Yapay Zekâ Asistan</h2>
-        <p>Aklına takılan her şeyi sor, 7/24 anında yanıt al.</p>
+        <p>Aklına takılan her şeyi sor, saniyeler içinde anında yanıt al.
+           Çalışma saatleri, fiyatlar, randevu adımları ve daha fazlası.</p>
+        <ul class="assistant-points">
+          <li>💬 Doğal dilde, insan gibi yanıtlar</li>
+          <li>⚡ Ortalama 1 saniyeden kısa yanıt süresi</li>
+          <li>🌙 Gece gündüz, her an ulaşılabilir</li>
+        </ul>
       </div>
       <div class="chat card">
         <div class="chat-head">
@@ -184,35 +292,63 @@
     </div>
   </section>
 
-  <!-- Nasıl Çalışır -->
-  <section class="section section-alt" id="how">
+  <!-- Yorumlar -->
+  <section class="section section-alt" id="reviews">
     <div class="container">
       <div class="section-head">
-        <h2>Nasıl çalışır?</h2>
-        <p>Üç basit adımda randevunu oluştur.</p>
+        <h2>Kullanıcılar ne diyor?</h2>
+        <p>Binlerce kişi randevularını RandevuAI ile alıyor.</p>
       </div>
-      <div class="grid steps">
-        <article class="card step">
-          <span class="step-no">1</span>
-          <h3>Hizmeti seç</h3>
-          <p>İhtiyacın olan hizmeti listeden seç. İstersen önce asistana sorabilirsin.</p>
+      <div class="grid reviews">
+        <article class="card review">
+          <div class="stars">★★★★★</div>
+          <p>"Telefonda beklemeden 1 dakikada randevumu aldım. Asistan sorularımı anında yanıtladı, çok pratik."</p>
+          <div class="review-user"><span class="ru-avatar">AY</span><div><b>Ayşe Y.</b><small>Danışmanlık</small></div></div>
         </article>
-        <article class="card step">
-          <span class="step-no">2</span>
-          <h3>Gün ve saati belirle</h3>
-          <p>Sana uygun boş günü ve saati takvimden kolayca işaretle.</p>
+        <article class="card review">
+          <div class="stars">★★★★★</div>
+          <p>"Gece yarısı randevu almak istedim, sorun olmadı. Hatırlatma mesajı da gelince hiç unutmadım."</p>
+          <div class="review-user"><span class="ru-avatar">MD</span><div><b>Mehmet D.</b><small>Teknik Destek</small></div></div>
         </article>
-        <article class="card step">
-          <span class="step-no">3</span>
-          <h3>Onayla, hazırsın</h3>
-          <p>Bilgilerini gir, onayla. Randevu bilgisi ve hatırlatma sana ulaşsın.</p>
+        <article class="card review">
+          <div class="stars">★★★★★</div>
+          <p>"Arayüz çok temiz ve hızlı. Planım değişince tek tıkla erteledim. Kesinlikle tavsiye ederim."</p>
+          <div class="review-user"><span class="ru-avatar">ZK</span><div><b>Zeynep K.</b><small>Web Sunumu</small></div></div>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- SSS -->
+  <section class="section" id="faq">
+    <div class="container faq-inner">
+      <div class="section-head left">
+        <h2>Sıkça sorulan sorular</h2>
+        <p>Merak ettiklerin burada. Cevabını bulamadıysan asistana sor.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">Randevu almak için üye olmam gerekiyor mu?<span>+</span></button>
+          <div class="faq-a"><p>Hayır. Sadece adını, hizmeti, tarih ve saati seçmen yeterli. Kayıt zorunluluğu yok.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Randevumu nasıl iptal veya erteleyebilirim?<span>+</span></button>
+          <div class="faq-a"><p>Onay e-postandaki bağlantıdan, randevu saatinden 2 saat öncesine kadar ücretsiz iptal edebilir veya erteleyebilirsin.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Yapay zekâ asistanı neleri yanıtlıyor?<span>+</span></button>
+          <div class="faq-a"><p>Çalışma saatleri, fiyatlar, hizmet içerikleri, randevu adımları gibi sık sorulan konularda 7/24 anında yardımcı olur.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Bilgilerim güvende mi?<span>+</span></button>
+          <div class="faq-a"><p>Evet. Tüm bilgilerin şifrelenerek saklanır ve üçüncü kişilerle paylaşılmaz. Altyapımız KVKK uyumludur.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="section cta" id="contact">
+  <section class="section cta">
     <div class="container cta-inner">
       <h2>Randevunu şimdi oluştur</h2>
       <p>Beklemeye son. Birkaç adımda randevunu al, gerisini bize bırak.</p>
@@ -220,9 +356,35 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="logo"><span class="logo-mark">R</span> Randevu<b>AI</b></span>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo"><span class="logo-mark">R</span> Randevu<b>AI</b></span>
+        <p>Yapay zekâ destekli, saniyeler içinde randevu almanı sağlayan modern platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Keşfet</h4>
+        <a href="#services">Hizmetler</a>
+        <a href="#how">Nasıl Çalışır</a>
+        <a href="#assistant">AI Asistan</a>
+        <a href="#faq">S.S.S.</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kurumsal</h4>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Gizlilik</a>
+        <a href="#">KVKK</a>
+        <a href="#">İletişim</a>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <a href="#">📧 destek@randevuai.com</a>
+        <a href="#">📞 0850 000 00 00</a>
+        <a href="#">📍 İstanbul, Türkiye</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <p>© 2026 RandevuAI — Demo tasarım. Tüm hakları saklıdır.</p>
     </div>
   </footer>
