@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RandevuAI — Yönetim Paneli</title>
+  <meta name="description" content="RandevuAI yönetim paneli demosu — randevular, istatistikler ve ayarlar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">R</span>
+        <span>Randevu<b>AI</b></span>
+      </a>
+      <nav class="admin-nav">
+        <a href="#" class="active" data-view="dashboard"><span>📊</span> Panel</a>
+        <a href="#" data-view="appointments"><span>📅</span> Randevular</a>
+        <a href="#" data-view="assistant"><span>🤖</span> AI Ayarları</a>
+        <a href="#" data-view="settings"><span>⚙️</span> Ayarlar</a>
+      </nav>
+      <a href="index.html" class="admin-back">← Siteye dön</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <button class="nav-toggle admin-menu" id="adminMenu" aria-label="Menü"><span></span><span></span><span></span></button>
+        <h1 id="viewTitle">Panel</h1>
+        <div class="topbar-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Temayı değiştir"><span class="theme-icon">🌙</span></button>
+          <div class="admin-user"><span class="avatar-sm">EA</span> Yönetici</div>
+        </div>
+      </header>
+
+      <!-- Dashboard view -->
+      <section class="admin-view" data-view="dashboard">
+        <div class="stat-grid">
+          <div class="card stat"><span class="stat-ico">📅</span><div><b id="stTotal">0</b><small>Toplam Randevu</small></div></div>
+          <div class="card stat"><span class="stat-ico">⏳</span><div><b id="stPending">0</b><small>Bekleyen</small></div></div>
+          <div class="card stat"><span class="stat-ico">✅</span><div><b id="stConfirmed">0</b><small>Onaylı</small></div></div>
+          <div class="card stat"><span class="stat-ico">💰</span><div><b id="stRevenue">₺0</b><small>Tahmini Gelir</small></div></div>
+        </div>
+
+        <div class="admin-cols">
+          <div class="card">
+            <div class="card-head"><h3>Haftalık Doluluk</h3></div>
+            <div class="bars" id="bars"></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Yaklaşan Randevular</h3></div>
+            <ul class="upcoming" id="upcoming"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appointments view -->
+      <section class="admin-view" data-view="appointments" hidden>
+        <div class="card">
+          <div class="table-toolbar">
+            <input type="search" id="search" placeholder="🔍 İsim veya hizmet ara..." />
+            <select id="filterStatus">
+              <option value="">Tüm durumlar</option>
+              <option value="pending">Bekleyen</option>
+              <option value="confirmed">Onaylı</option>
+              <option value="cancelled">İptal</option>
+            </select>
+            <button class="btn btn-primary" id="addBtn">+ Yeni Randevu</button>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr><th>Müşteri</th><th>Hizmet</th><th>Tarih</th><th>Saat</th><th>Durum</th><th>İşlem</th></tr>
+              </thead>
+              <tbody id="apptBody"></tbody>
+            </table>
+          </div>
+          <p class="empty" id="emptyRow" hidden>Kayıt bulunamadı.</p>
+        </div>
+      </section>
+
+      <!-- Assistant view -->
+      <section class="admin-view" data-view="assistant" hidden>
+        <div class="card">
+          <div class="card-head"><h3>Yapay Zekâ Asistan Ayarları</h3></div>
+          <div class="field"><label>Karşılama mesajı</label><input type="text" value="Merhaba! 👋 Size nasıl yardımcı olabilirim?" /></div>
+          <div class="field"><label>Yanıt tonu</label>
+            <select><option>Samimi</option><option>Resmî</option><option>Kısa ve net</option></select>
+          </div>
+          <div class="toggle-row"><span>Çalışma saatleri dışında otomatik yanıt</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="toggle-row"><span>Randevuyu asistan üzerinden alma</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <button class="btn btn-primary">Kaydet</button>
+        </div>
+      </section>
+
+      <!-- Settings view -->
+      <section class="admin-view" data-view="settings" hidden>
+        <div class="card">
+          <div class="card-head"><h3>İşletme Ayarları</h3></div>
+          <div class="field"><label>İşletme adı</label><input type="text" value="RandevuAI Demo" /></div>
+          <div class="field"><label>Çalışma saatleri</label><input type="text" value="Hafta içi 09:00 - 18:00" /></div>
+          <div class="toggle-row"><span>SMS bildirimleri</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="toggle-row"><span>E-posta bildirimleri</span><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <button class="btn btn-primary">Kaydet</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Yeni randevu modalı -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box card">
+      <div class="card-head"><h3>Yeni Randevu</h3><button class="modal-close" id="modalClose">✕</button></div>
+      <form id="addForm" class="booking-form">
+        <div class="field"><label>Müşteri Adı</label><input type="text" id="mName" required></div>
+        <div class="field"><label>Hizmet</label>
+          <select id="mService" required>
+            <option value="">Seçiniz</option>
+            <option>Danışmanlık Görüşmesi</option>
+            <option>Web Sitesi Sunumu</option>
+            <option>Teknik Destek</option>
+            <option>Ürün Demosu</option>
+          </select>
+        </div>
+        <div class="field"><label>Tarih</label><input type="date" id="mDate" required></div>
+        <div class="field"><label>Saat</label><input type="time" id="mTime" required></div>
+        <button type="submit" class="btn btn-primary btn-block">Ekle</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

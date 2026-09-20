@@ -4,8 +4,8 @@
   const toggle = document.getElementById('themeToggle');
   let saved;
   try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const start = saved || (prefersDark ? 'dark' : 'light');
+  // Varsayılan: aydınlık tema. Kullanıcı değiştirirse tercihi saklanır.
+  const start = saved || 'light';
   root.setAttribute('data-theme', start);
 
   toggle.addEventListener('click', () => {
