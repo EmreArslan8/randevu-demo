@@ -165,6 +165,16 @@ chatSuggest.addEventListener('click', e => {
   sendUser(btn.textContent);
 });
 
+/* ---------- Görsel yükleme güvenliği ---------- */
+/* Bir stok görsel yüklenemezse, kırık ikon yerine kartın nötr arka planını göster */
+(function imageFallback() {
+  const handle = img => { img.style.visibility = 'hidden'; };
+  document.querySelectorAll('img').forEach(img => {
+    if (img.complete && img.naturalWidth === 0) handle(img);
+    img.addEventListener('error', () => handle(img));
+  });
+})();
+
 /* ---------- SSS akordeon ---------- */
 const faqList = document.getElementById('faqList');
 if (faqList) {
