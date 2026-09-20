@@ -340,6 +340,7 @@ body.admin { background: var(--bg-alt); }
 
 /* Modal */
 .modal { position: fixed; inset: 0; background: rgba(16,35,58,.5); display: grid; place-items: center; z-index: 100; padding: 20px; }
+.modal[hidden] { display: none; }
 .modal-box { width: 100%; max-width: 420px; box-shadow: var(--shadow); }
 .modal-close { background: none; border: 0; font-size: 1.1rem; cursor: pointer; color: var(--muted); }
 
