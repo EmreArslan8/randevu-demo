@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RandevuAI — Randevu & Yapay Zekâ Destekli Cevap Sistemi</title>
+  <meta name="description" content="Randevu sistemli, yapay zekâ destekli cevap sistemine sahip modern web sitesi demosu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark">R</span>
+        <span>Randevu<b>AI</b></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#features">Özellikler</a>
+        <a href="#booking">Randevu Al</a>
+        <a href="#assistant">AI Asistan</a>
+        <a href="#pricing">Fiyatlar</a>
+        <a href="#contact" class="nav-cta">İletişim</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="badge">✨ Yapay zekâ destekli randevu platformu</span>
+        <h1>Randevularınızı <span class="grad">akıllı</span> şekilde yönetin</h1>
+        <p>Müşterileriniz saniyeler içinde randevu alsın, yapay zekâ asistanı soruları
+           7/24 otomatik cevaplasın. Kurulum gerektirmeyen, mobil uyumlu bir çözüm.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary">Hemen Randevu Al</a>
+          <a href="#assistant" class="btn btn-ghost">AI Asistanı Dene</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>12k+</b><span>Randevu</span></div>
+          <div><b>%98</b><span>Memnuniyet</span></div>
+          <div><b>7/24</b><span>AI Destek</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mini-cal">
+          <div class="mini-cal-head">
+            <span>Eylül 2026</span>
+            <div class="dots"><i></i><i></i><i></i></div>
+          </div>
+          <div class="mini-cal-grid" id="miniCal"></div>
+          <div class="mini-slot">
+            <span class="pulse"></span> Bugün 3 uygun saat var
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <h2>Neden RandevuAI?</h2>
+        <p>İşletmeniz için ihtiyacınız olan her şey tek bir modern panelde.</p>
+      </div>
+      <div class="grid features">
+        <article class="card feature">
+          <div class="ico">📅</div>
+          <h3>Online Randevu</h3>
+          <p>Müşterileriniz istedikleri gün ve saati kolayca seçsin, otomatik hatırlatma alsın.</p>
+        </article>
+        <article class="card feature">
+          <div class="ico">🤖</div>
+          <h3>Yapay Zekâ Cevap</h3>
+          <p>Sık sorulan sorulara anında, doğal dilde yanıt veren akıllı asistan.</p>
+        </article>
+        <article class="card feature">
+          <div class="ico">📱</div>
+          <h3>Mobil Uyumlu</h3>
+          <p>Telefon, tablet ve masaüstünde kusursuz görünen responsive tasarım.</p>
+        </article>
+        <article class="card feature">
+          <div class="ico">🔔</div>
+          <h3>Bildirimler</h3>
+          <p>SMS ve e-posta ile otomatik randevu onayı ve hatırlatmaları.</p>
+        </article>
+        <article class="card feature">
+          <div class="ico">📊</div>
+          <h3>Raporlama</h3>
+          <p>Doluluk oranı, gelir ve müşteri istatistiklerini tek bakışta görün.</p>
+        </article>
+        <article class="card feature">
+          <div class="ico">🔒</div>
+          <h3>Güvenli</h3>
+          <p>Verileriniz şifrelenerek saklanır, KVKK uyumlu altyapı.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="section section-alt" id="booking">
+    <div class="container booking-inner">
+      <div class="section-head left">
+        <h2>Randevu Al</h2>
+        <p>Uygun bir tarih ve saat seçin, bilgilerinizi girin. Saniyeler sürer.</p>
+      </div>
+      <form class="card booking-form" id="bookingForm" novalidate>
+        <div class="field">
+          <label for="name">Ad Soyad</label>
+          <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
+        </div>
+        <div class="field">
+          <label for="service">Hizmet</label>
+          <select id="service" name="service" required>
+            <option value="">Seçiniz</option>
+            <option>Danışmanlık Görüşmesi</option>
+            <option>Web Sitesi Sunumu</option>
+            <option>Teknik Destek</option>
+            <option>Ürün Demosu</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Tarih</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="field">
+          <label>Saat</label>
+          <div class="slots" id="slots">
+            <button type="button" data-time="09:00">09:00</button>
+            <button type="button" data-time="10:30">10:30</button>
+            <button type="button" data-time="13:00">13:00</button>
+            <button type="button" data-time="14:30">14:30</button>
+            <button type="button" data-time="16:00">16:00</button>
+            <button type="button" data-time="17:30">17:30</button>
+          </div>
+          <input type="hidden" id="time" name="time" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Randevuyu Onayla</button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- AI Assistant -->
+  <section class="section" id="assistant">
+    <div class="container">
+      <div class="section-head">
+        <h2>Yapay Zekâ Asistan</h2>
+        <p>Müşterilerinizin sorularını 7/24 otomatik yanıtlayan demo asistan.</p>
+      </div>
+      <div class="chat card">
+        <div class="chat-head">
+          <span class="avatar">🤖</span>
+          <div>
+            <b>RandevuAI Asistan</b>
+            <small><span class="online"></span> Çevrimiçi</small>
+          </div>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="msg bot">Merhaba! 👋 Ben RandevuAI asistanı. Size nasıl yardımcı olabilirim?</div>
+        </div>
+        <div class="chat-suggest" id="chatSuggest">
+          <button>Çalışma saatleri nedir?</button>
+          <button>Randevu nasıl alırım?</button>
+          <button>Fiyatlar ne kadar?</button>
+        </div>
+        <form class="chat-input" id="chatForm">
+          <input type="text" id="chatText" placeholder="Bir soru yazın..." autocomplete="off" />
+          <button type="submit" aria-label="Gönder">➤</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2>Basit Fiyatlandırma</h2>
+        <p>İşletmenize uygun paketi seçin, istediğiniz zaman yükseltin.</p>
+      </div>
+      <div class="grid pricing">
+        <article class="card price">
+          <h3>Başlangıç</h3>
+          <div class="amount">₺0<span>/ay</span></div>
+          <ul>
+            <li>Aylık 50 randevu</li>
+            <li>Temel AI cevaplar</li>
+            <li>E-posta bildirim</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-block">Ücretsiz Başla</a>
+        </article>
+        <article class="card price featured">
+          <span class="tag">Popüler</span>
+          <h3>Profesyonel</h3>
+          <div class="amount">₺499<span>/ay</span></div>
+          <ul>
+            <li>Sınırsız randevu</li>
+            <li>Gelişmiş AI asistan</li>
+            <li>SMS + e-posta bildirim</li>
+            <li>Raporlama paneli</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block">Paketi Seç</a>
+        </article>
+        <article class="card price">
+          <h3>Kurumsal</h3>
+          <div class="amount">Özel</div>
+          <ul>
+            <li>Çoklu şube</li>
+            <li>Özel AI eğitimi</li>
+            <li>Öncelikli destek</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-block">İletişime Geç</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section class="section cta" id="contact">
+    <div class="container cta-inner">
+      <h2>Projenizi birlikte hayata geçirelim</h2>
+      <p>Randevu ve yapay zekâ destekli cevap sistemi için hemen iletişime geçin.</p>
+      <a href="#booking" class="btn btn-primary btn-lg">Ücretsiz Demo Al</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo"><span class="logo-mark">R</span> Randevu<b>AI</b></span>
+      <p>© 2026 RandevuAI — Demo tasarım. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
